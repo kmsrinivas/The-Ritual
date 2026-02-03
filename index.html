@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>నక్షత్ర ద్వారం | Season 1</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+
+<style>
+body { margin:0; font-family:'Ramabhadra',sans-serif; background:#0b0b0b; color:#f2f2f2; }
+header { padding:25px; text-align:center; background:radial-gradient(circle,#2b0000,#000); }
+nav { display:flex; overflow-x:auto; background:#111; }
+nav button { flex:1; min-width:110px; padding:14px; background:none; border:none; color:#ccc; cursor:pointer; }
+nav button.active { color:#ff4444; border-bottom:2px solid #ff4444; }
+iframe { width:100%; height:85vh; border:none; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>నక్షత్ర ద్వారం</h1>
+<p>Season 1 – పూర్తి స్క్రీన్‌ప్లే</p>
+</header>
+
+<nav>
+<button onclick="loadEp('episode1_final.html',this)">Episode 1</button>
+<button onclick="loadEp('episode2_final.html',this)">Episode 2</button>
+<button onclick="loadEp('episode3_final.html',this)">Episode 3</button>
+<button onclick="loadEp('episode4_final.html',this)">Episode 4</button>
+<button onclick="loadEp('episode5_final.html',this)">Episode 5</button>
+<button onclick="loadEp('episode6_final.html',this)">Episode 6</button>
+<button onclick="loadEp('episode7_final.html',this)">Episode 7</button>
+</nav>
+
+<iframe id="frame" src="episode1_final.html"></iframe>
+
+<script>
+function loadEp(f,b){
+ document.querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active');
+ document.getElementById('frame').src=f;
+}
+</script>
+
+</body>
+</html>
