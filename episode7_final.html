@@ -9,7 +9,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&family=Ubuntu&display=swap" rel="stylesheet">
+<style>
+  /* Fixed top-left audio button */
+  #audioPlayerBox {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 10px 14px;
+    border-radius: 30px;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
 
+  #audioBtn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  #audioBtn:hover {
+    opacity: 0.8;
+  }
+</style>
   <style>
     body {
       margin: 0;
@@ -55,7 +80,29 @@
 </head>
 
 <body>
+<div id="audioPlayerBox">
+  <button id="audioBtn">▶ Play</button>
+</div>
 
+<audio id="episodeAudio">
+  <source src="episode7.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+
+<script>
+  const audio = document.getElementById("episodeAudio");
+  const btn = document.getElementById("audioBtn");
+
+  btn.addEventListener("click", function () {
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = "⏸ Pause";
+    } else {
+      audio.pause();
+      btn.textContent = "▶ Play";
+    }
+  });
+</script>
   <!-- Thumbnail -->
   <img src="episode7.png" alt="Episode 7 Thumbnail" class="thumbnail">
 
